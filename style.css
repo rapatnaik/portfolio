@@ -50,22 +50,50 @@ html {
   accent-color: var(--color-accent);
 }
 
-form label,
-form input,
-form textarea,
-form button {
-  display: block;
+input,
+textarea,
+button {
+  font: inherit;
 }
 
-form input,
-form textarea,
-form button {
-  font: inherit;
-  width: 100%;
+textarea {
+  resize: vertical;
   box-sizing: border-box;
 }
 
-form label {
-  margin-block: 0.5rem;
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
 }
 
+form label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em; 
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+
+.projects article h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
