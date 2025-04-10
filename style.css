@@ -15,6 +15,9 @@ nav li {
 
 nav {
   display: flex;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid oklch(80% 3% 200);
+  margin-bottom: 1rem;
 }
 
 nav a {
@@ -23,10 +26,46 @@ nav a {
   padding: 0.5rem;
   text-decoration: none;
   color: inherit;
+  border: none;
 }
 
 nav a.current {
-  background-color: #90D5FF;
+  background-color: #eee;
   font-weight: bold;
   border-radius: 4px;
+
+  border-bottom: 0.4em solid oklch(90% 3% 200); 
+  padding-bottom: 0.1em;                        
+  font-weight: bold;
 }
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: 0.1em;
+  background-color: oklch(from var(--color-accent) 95% 5% h)
+}
+
+html {
+  --color-accent: oklch(75% 20% 250);
+  accent-color: var(--color-accent);
+}
+
+form label,
+form input,
+form textarea,
+form button {
+  display: block;
+}
+
+form input,
+form textarea,
+form button {
+  font: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form label {
+  margin-block: 0.5rem;
+}
+
