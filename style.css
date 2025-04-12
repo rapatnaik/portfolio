@@ -97,3 +97,65 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+time {
+  font-style: italic;
+  color: gray;
+}
+
+section p {
+  margin: 0.25rem 0 0.75rem;
+}
+
+ul {
+  padding-left: 1.25rem; /* default indent, optional */
+}
+
+ul li {
+  list-style-type: disc; /* default bullet style */
+  color: inherit;        /* text stays default color */
+}
+
+ul li::marker {
+  color: var(--color-accent); /* only bullet color changes */
+}
+
+article {
+  padding: 0.65rem 1rem;
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+}
+
+article {
+  transition: transform 0.3s ease;
+}
+
+article:hover {
+  transform: scale(1.01);
+  text-decoration-color: var(--color-accent);
+}
+
+
