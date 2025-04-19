@@ -138,9 +138,10 @@ ul li::marker {
   color: var(--color-accent); /* only bullet color changes */
 }
 
+
 article {
   padding: 0.65rem 1rem;
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, oklch(90% 0.04 250), canvas 13%);
   border-radius: 8px;
   margin-bottom: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -167,5 +168,3 @@ article:hover {
   font-size: 80%;
   font-family: inherit;
 }
-
-
