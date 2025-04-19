@@ -16,7 +16,8 @@ nav li {
 nav {
   display: flex;
   margin-bottom: 1rem;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  --border-color: oklch(80% 3% 200 / 40%);
+  border-bottom: 1px solid var(--border-color);
   margin-bottom: 1rem;
 }
 
@@ -42,12 +43,13 @@ nav a.current {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
-  background-color: oklch(from var(--color-accent) 95% 5% h)
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 html {
   --color-accent: oklch(75% 20% 250);
   accent-color: var(--color-accent);
+  color-scheme: light dark;
 }
 
 input,
@@ -156,6 +158,14 @@ article {
 article:hover {
   transform: scale(1.01);
   text-decoration-color: var(--color-accent);
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
 }
 
 
