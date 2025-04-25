@@ -79,3 +79,69 @@ form?.addEventListener('submit', function (event) {
 
     location.href = url; 
 });
+
+
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    console.log(response);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+}
+
+fetchJSON('../lib/projects.json'); // Update path if needed
+
+// export function renderProjects(project, containerElement) {
+//   // Your code will go here
+//   containerElement.innerHTML = '';
+//   const article = document.createElement('article');
+//   article.innerHTML = `
+//       <h3>${project.title}</h3>
+//       <img src="${project.image}" alt="${project.title}">
+//       <p>${project.description}</p>
+//   `;
+//   containerElement.appendChild(article);
+// }
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  console.log("HI WORKS");
+  console.log("Project data:", projects);
+
+  containerElement.innerHTML = '';
+
+  if (!projects || projects.length === 0) {
+    const placeholder = document.createElement('p');
+    placeholder.textContent = 'No projects available at the moment.';
+    containerElement.appendChild(placeholder);
+    return;
+  }
+
+  for (const project of projects) {
+    const article = document.createElement('article');
+
+    const heading = document.createElement(headingLevel);
+    heading.textContent = project.title;
+
+    const image = document.createElement('img');
+    image.src = project.image;
+    image.alt = project.title;
+
+    const description = document.createElement('p');
+    description.textContent = project.description;
+
+    article.appendChild(heading);
+    article.appendChild(image);
+    article.appendChild(description);
+
+    containerElement.appendChild(article);
+  }
+}
