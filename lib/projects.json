@@ -1,61 +1,73 @@
 [
 	{
-		"title": "Lorem ipsum dolor sit.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor quos, quod assumenda explicabo odio, nobis ipsa laudantium quas eum veritatis ullam sint porro minima modi molestias doloribus cumque odit."
+		"title": "Shakespearean Small Language Model",
+		"year": "2025",
+		"image": "https://hips.hearstapps.com/hmg-prod/images/william-shakespeare-study-guide-66c34dd095ccc.jpg?crop=0.852xw:1.00xh;0.0749xw,0&resize=768:*",
+		"description": "Developing a Shakespearean sentence completion model using LSTM and TensorFlow Keras, training on compiled text. Preprocessed Shakespearean text by cleaning, tokenizing, and vectorizing data, ensuring compatibility with framework. Led model experimentation efforts, refining preprocessing scripts and optimizing sentence parameters to enhance accuracy."
 	},
 	{
-		"title": "Architecto minima sed omnis?",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Est, reiciendis aspernatur debitis maxime et itaque animi sit quod quo, tempore incidunt tempora dignissimos exercitationem enim numquam quam quaerat optio laborum ut unde hic delectus laboriosam? Quasi, cupiditate corporis."
+		"title": "National Power Outage Duration Predictor",
+		"year": "2025",
+		"image": "https://bkvenergy.com/wp-content/uploads/2023/08/power-outage.webp",
+		"description": "Conducted comprehensive data cleaning and preprocessing on U.S. power outage records (2000-2016), for suitable analysis. Built a multiclass classification model using a Random Forest Classifier to predict power outage severity (Short, Moderate, Long, Severe), leveraging an sklearn pipeline to streamline preprocessing and training, enhancing predictive accuracy."
 	},
 	{
-		"title": "Asperiores rem repellendus doloremque.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Eligendi tenetur quae quos recusandae est. Cumque, voluptatem. Quo nihil dignissimos molestiae explicabo praesentium aspernatur debitis, illo rerum possimus quam ducimus earum nulla officiis maiores itaque repellat corporis soluta labore?"
+		"title": "Dexteria 2.0 App Reoptimization",
+		"year": "2025",
+		"image": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/38/0f/b8/380fb8a6-ec79-91b9-9cf6-25892c76305c/AppIcon_1-0-0-1x_U007epad-0-10-0-85-220.png/1200x630wa.png",
+		"description": "Leading a team of designers, data analysts, and marketers to optimize Dexteria 2, a therapy game app, for stroke rehab. Analyzing app usage data and conducting user interviews with physical therapists to identify underutilized features and user pain points, enabling data-driven recommendations to improve app’s features and usability for the stroke survivor market."
 	},
 	{
-		"title": "Laudantium reprehenderit placeat perspiciatis.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Quo minus perferendis nulla corrupti repellat dolorem dolore assumenda sit minima ducimus quidem ullam, id ipsa dicta tempora laborum officiis unde possimus cumque nobis alias inventore! Ullam repudiandae iusto nam."
+		"title": "Meteorite Landing Analysis and Modeling",
+		"year": "2023",
+		"image": "https://i0.wp.com/eos.org/wp-content/uploads/2023/10/asteroid-1.png?fit=1200%2C675&ssl=1",
+		"description": "Analyzed a NASA Open Data Portal dataset on meteorite landings to pinpoint patterns in the locations of fallen meteorites. Utilized hypothesis testing to determine if the observed data from random samples aligns with the predicted distribution."
 	},
 	{
-		"title": "Consequuntur autem eos facere.",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Laborum alias ea unde harum aspernatur? Molestiae, veritatis, possimus, numquam ex excepturi quod ducimus sit odit optio quibusdam sequi aliquid itaque tempore perspiciatis placeat expedita vero voluptates. Sit, aspernatur sint!"
+		"title": "Song Recommendation System",
+		"year": "2023",
+		"image": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2166333491.jpg?c=16x9&q=h_833,w_1480,c_fill",
+		"description": "Developed a Python-based song recommendation system based on the quantified similarity to a Taylor Swift song input. Implemented a search tool to input a term and find the total occurrences and number of Taylor Swift songs it appears in."
 	},
 	{
 		"title": "Quos sint quaerat omnis?",
+		"year": "2023",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
 		"description": "Est neque, velit nam rerum error odio voluptates voluptatem magnam laboriosam ad? Doloribus, id et itaque unde porro totam ullam quaerat blanditiis odit animi eveniet aut, voluptate velit iure odio."
 	},
 	{
 		"title": "Iste ipsam magni fuga!",
+		"year": "2023",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
 		"description": "Velit omnis suscipit nemo quia? Iste maiores numquam labore quia nemo eveniet odit, modi magnam? Architecto officia sint est. Architecto iste minima consequuntur explicabo illo error sed at dolore nostrum!"
 	},
 	{
 		"title": "Ipsum, aperiam magni? Nobis.",
+		"year": "2023",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
 		"description": "Delectus magni, vel, quod mollitia hic rem temporibus, sint doloribus tenetur qui dolores tempore quisquam fuga nobis recusandae molestiae ipsum nostrum maxime eaque dicta aperiam eum quas beatae. At, neque."
 	},
 	{
 		"title": "Dicta nihil odit illo?",
+		"year": "2023",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
 		"description": "Vitae quos laudantium officiis rerum, accusamus delectus aspernatur quas nulla, magni sed, excepturi saepe incidunt laboriosam alias at aliquam atque quisquam autem nesciunt. Minus, reprehenderit odit nam illo natus aspernatur?"
 	},
 	{
 		"title": "Vel earum nulla facilis.",
+		"year": "2023",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
 		"description": "Aut voluptatem sint atque corrupti accusamus necessitatibus possimus et, itaque nulla id deleniti nemo repellendus asperiores molestias laudantium, mollitia ad dicta. Laboriosam, itaque. Quos corporis, perferendis natus officiis beatae qui."
 	},
 	{
 		"title": "Nobis iste neque quaerat.",
+		"year": "2023",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
 		"description": "Quos, recusandae, sit rerum velit nostrum nihil quisquam tempora repellat sed quibusdam facilis. Assumenda quaerat ab, nesciunt odio facere sit, ipsa necessitatibus tempora, maiores commodi sed quae provident deserunt at?"
 	},
 	{
 		"title": "Iusto, incidunt. Totam, illum.",
+		"year": "2023",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
 		"description": "Tempore, eveniet minus velit, earum aperiam necessitatibus repellendus provident accusamus illum officiis doloribus, eum saepe est aut numquam distinctio pariatur natus totam repellat. Numquam nulla libero sapiente magnam nostrum ex."
 	}

@@ -98,7 +98,7 @@ export async function fetchJSON(url) {
   }
 }
 
-fetchJSON('../lib/projects.json'); // Update path if needed
+// fetchJSON('../lib/projects.json'); // Update path if needed
 
 // export function renderProjects(project, containerElement) {
 //   // Your code will go here
@@ -144,4 +144,8 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
     containerElement.appendChild(article);
   }
+}
+
+export async function fetchGithubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
 }

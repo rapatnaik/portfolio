@@ -11,5 +11,5 @@ renderProjects(projects, projectsContainer, 'h2');
 // 🔢 Count and update title
 const titleElement = document.querySelector('.projects-title');
 if (titleElement) {
-  titleElement.textContent = `Projects (${projects.length})`;
+  titleElement.textContent = `${projects.length} Projects`;
 }
