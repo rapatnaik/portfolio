@@ -135,12 +135,25 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     image.src = project.image;
     image.alt = project.title;
 
+    // Create a container div for description and year
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('project-text');
+
     const description = document.createElement('p');
     description.textContent = project.description;
 
+    const year = document.createElement('p');
+    year.textContent = `Year: ${project.year}`;
+    year.style.fontFamily = 'Baskerville, serif';
+    year.style.fontVariantNumeric = 'oldstyle-nums';
+    year.style.fontSize = '0.9em';
+
+    textContainer.appendChild(description);
+    textContainer.appendChild(year);
+
     article.appendChild(heading);
     article.appendChild(image);
-    article.appendChild(description);
+    article.appendChild(textContainer);
 
     containerElement.appendChild(article);
   }

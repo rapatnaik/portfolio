@@ -202,3 +202,10 @@ article:hover {
   object-fit: cover;
   border-radius: 4px;
 }
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
