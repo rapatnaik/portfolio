@@ -11,6 +11,7 @@ const projects = await fetchJSON('../lib/projects.json');
 
 const projectsContainer = document.querySelector('.projects');
 
+let query = '';
 function getFilteredProjects() {
   return projects.filter(project => {
     const matchesQuery = Object.values(project).join('\n').toLowerCase().includes(query.toLowerCase());
@@ -61,6 +62,13 @@ function renderPieChart(projectsGiven) {
       .on('click', () => {
         selectedIndex = selectedIndex === i ? -1 : i;
         renderPieChart(getFilteredProjects());
+      })
+      .on('mouseover', () => {
+        d3.select('#projects-pie-plot').classed('dimmed', true);
+      })
+      .on('mouseout', () => {
+        d3.select('#projects-pie-plot').classed('dimmed', false);
+      });
   
         // // Re-apply selection classes to all legend items
         // d3.select('.legend')
@@ -68,7 +76,6 @@ function renderPieChart(projectsGiven) {
         //   .attr('class', (_, idx) => (
         //     idx === selectedIndex ? 'legend-item selected' : 'legend-item'
         //   ));
-      });
   });
   
 
@@ -89,21 +96,37 @@ function renderPieChart(projectsGiven) {
   
     renderProjects(filtered, projectsContainer, 'h2');
   }
+  // 🔢 Count visible projects
+  const visibleCount = projectsGiven.length;
+  let titleText = `${visibleCount} Project${visibleCount !== 1 ? 's' : ''}`;
+
+  // Add year label if selected
+  if (selectedIndex !== -1 && pieData[selectedIndex]) {
+    titleText += ` in ${pieData[selectedIndex].label}`;
+  }
+
+  // Add query match if searching
+  if (query.trim() !== '') {
+    titleText += ` matching “${query.trim()}”`;
+  }
+
+  // If no filters at all, reset to total
+  if (selectedIndex === -1 && query.trim() === '') {
+    titleText = `${projects.length} Project${projects.length !== 1 ? 's' : ''}`;
+  }
+
+  // Apply to page
+  if (titleElement) {
+    titleElement.textContent = titleText;
+  }
 }
 
 // Call this function on page load
 renderPieChart(projects);
 
 let searchInput = document.querySelector('.searchBar');
-let query = '';
 
 searchInput.addEventListener('change', (event) => {
   query = event.target.value;
   renderPieChart(getFilteredProjects());
-  let filtered = projects.filter((project) => {
-    let values = Object.values(project).join('\n').toLowerCase();
-    return values.includes(query.toLowerCase());
-  });
-
-  renderPieChart(filtered); 
 });
