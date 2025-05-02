@@ -206,6 +206,74 @@ article:hover {
 #projects-pie-plot {
   max-width: 20em;
   margin-block: 2em;
+  flex-shrink: 0;
 
   overflow: visible;
+}
+
+.legend {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1.5em 1em;           
+  list-style: none;
+  padding: 1em;             
+  border: 1px solid oklch(80% 3% 250);
+  background-color: color-mix(in oklch, canvas, white 5%); /* very subtle bg */
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9rem;
+}
+
+.legend .swatch {
+  width: 1em;
+  height: 1em;
+  background-color: var(--color);
+  display: inline-block;
+  margin-right: 0.5em;
+  border-radius: 50%; /* use 50% for circles */
+  flex-shrink: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2em;                  /* space between chart and legend */
+  flex-wrap: wrap;           /* wraps nicely on small screens */
+  margin-top: 2em;
+}
+
+/* lab 5 step 5 */
+#projects-pie-plot path {
+  transition: opacity 300ms ease;
+}
+
+/* Class applied on hover */
+.dimmed path {
+  opacity: 0.5;
+}
+
+/* Except the hovered one */
+.dimmed path:hover {
+  opacity: 1;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+}
+
+#projects-pie-plot path.selected {
+  fill: var(--color);
+}
+
+.legend-item.selected .swatch {
+  background-color: var(--color);
+}
+
+path {
+  cursor: pointer;
 }
