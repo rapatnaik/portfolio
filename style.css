@@ -281,10 +281,11 @@ path {
 /* Summary Stats Container */
 .summary-stats {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* ✅ centers the whole row */
   gap: 2rem;
-  justify-content: flex-start;
-  padding: 1rem 0;
-  border-bottom: 1px solid;
+  margin: 2rem auto;         /* optional spacing around */
+  text-align: center;
 }
 
 /* Each Stat Block */
@@ -361,9 +362,9 @@ circle {
   transform-box: fill-box;
 }
 
-circle:hover {
-  transform: scale(1.5);
-}
+/* circle:hover {
+  transform: scale(1.1);
+} */
 
 dl.info {
   /* ... other styles ... */
@@ -419,3 +420,47 @@ circle.selected {
   margin: 0;
   color: var(--color);
 }
+
+
+/* Individual stat block */
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: system-ui, sans-serif;
+}
+
+/* Label and value styling (optional for polish) */
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.brush .overlay {
+  pointer-events: all;
+}
+
+.brush .selection {
+  pointer-events: none;
+}
+
+circle {
+  fill-opacity: 0.7;
+  transition: fill-opacity 200ms, transform 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle.hovered {
+  fill-opacity: 1; /* Fully opaque on hover */
+}
+
+

@@ -119,9 +119,29 @@ function renderScatterPlot(data, commits) {
       
     yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
 
+    const margin = { top: 0, right: 10, bottom: 0, left: 20 };
+
+    const usableArea = {
+        top: margin.top,
+        right: width - margin.right,
+        bottom: height - margin.bottom,
+        left: margin.left,
+        width: width - margin.left - margin.right,
+        height: height - margin.top - margin.bottom,
+    };
+
     const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
-    const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([5, 15]); // adjust these values based on your experimentation
+    const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([5, 25]); // adjust these values based on your experimentation
     const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+
+    // Add gridlines BEFORE the axes
+    const gridlines = svg
+    .append('g')
+    .attr('class', 'gridlines')
+    .attr('transform', `translate(${usableArea.left}, 0)`);
+
+    // Create gridlines as an axis with no labels and full-width ticks
+    gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 
     const dots = svg.append('g').attr('class', 'dots');
 
@@ -134,36 +154,26 @@ function renderScatterPlot(data, commits) {
     .attr('r', (d) => rScale(d.totalLines))
     .style('fill-opacity', 0.7) // Add transparency for overlapping dots
     .attr('fill', 'steelblue')
-    .on('mouseenter', (event, commit) => {
-        d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
-        renderTooltipContent(commit);
-        updateTooltipVisibility(true);
-        updateTooltipPosition(event);
+    .on('mouseenter', function (event, commit) {
+      d3.select(this)
+        .classed('hovered', true)
+        .transition()
+        .duration(150)
+        .attr('r', (d) => rScale(d.totalLines) * 1.5)  // scale radius
+        .style('fill-opacity', 1);
+      renderTooltipContent(commit);
+      updateTooltipVisibility(true);
+      updateTooltipPosition(event);
     })
-    .on('mouseleave', (event) => {
-        d3.select(event.currentTarget).style('fill-opacity', 0.7);
-        updateTooltipVisibility(false);
+    .on('mouseleave', function () {
+      d3.select(this)
+        .classed('hovered', false)
+        .transition()
+        .duration(150)
+        .attr('r', (d) => rScale(d.totalLines))
+        .style('fill-opacity', 0.7);
+      updateTooltipVisibility(false);
     });
-
-    const margin = { top: 0, right: 10, bottom: 0, left: 20 };
-
-    const usableArea = {
-        top: margin.top,
-        right: width - margin.right,
-        bottom: height - margin.bottom,
-        left: margin.left,
-        width: width - margin.left - margin.right,
-        height: height - margin.top - margin.bottom,
-    };
-
-    // Add gridlines BEFORE the axes
-    const gridlines = svg
-    .append('g')
-    .attr('class', 'gridlines')
-    .attr('transform', `translate(${usableArea.left}, 0)`);
-
-    // Create gridlines as an axis with no labels and full-width ticks
-    gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
         
     // Update scales with new ranges
     xScale.range([usableArea.left, usableArea.right]);
@@ -190,13 +200,17 @@ function renderScatterPlot(data, commits) {
     svg.append('g')
     .attr('class', 'brush')
     .call(
-        d3.brush()
+      d3.brush()
         .extent([
-            [usableArea.left, usableArea.top],
-            [usableArea.right, usableArea.bottom]
+          [usableArea.left, usableArea.top],
+          [usableArea.right, usableArea.bottom]
         ])
         .on('start brush end', brushed)
     );
+
+    // Fix: move brush below dots so it doesn't block hover
+    svg.select('.brush').lower();
+
 
       
 }
