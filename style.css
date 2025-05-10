@@ -375,3 +375,47 @@ dl.info[hidden]:not(:hover, :focus-within) {
   opacity: 0;
   visibility: hidden;
 }
+
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+
+circle.selected {
+  stroke: black;
+  stroke-width: 2px;
+  fill: #ff6b6b;
+}
+
+/* Language breakdown layout (shared with stats) */
+#language-breakdown {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25em 1em;
+  margin-top: 1rem;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+}
+
+/* Label styling */
+#language-breakdown dt {
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+/* Value styling */
+#language-breakdown dd {
+  margin: 0;
+  color: var(--color);
+}
