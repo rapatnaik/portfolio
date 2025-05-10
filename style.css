@@ -277,3 +277,101 @@ article:hover {
 path {
   cursor: pointer;
 }
+
+/* Summary Stats Container */
+.summary-stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid;
+}
+
+/* Each Stat Block */
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: system-ui, sans-serif;
+}
+
+/* Stat Label */
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+/* Stat Value */
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+/* Light, subtle horizontal gridlines */
+.gridlines path {
+  display: none; /* hide the vertical axis line */
+}
+
+.gridlines line {
+  stroke: #ccc;          /* light gray lines */
+  stroke-opacity: 0.5;   /* slightly faded */
+  shape-rendering: crispEdges;
+}
+
+.tooltip {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft elevation */
+  backdrop-filter: blur(4px); /* Optional: frosted glass effect */
+  font-size: 0.9rem;
+  z-index: 1000;
+  pointer-events: none; /* Prevent blocking hover events */
+  max-width: 260px;
+}
+
+/* Inside the tooltip: label/value layout */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25em 0.75em;
+  margin: 0;
+}
+
+dl.info dt {
+  font-weight: 600;
+  color: #6b7280;
+  margin: 0;
+}
+
+dl.info dd {
+  margin: 0;
+  color: #111827;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+dl.info {
+  /* ... other styles ... */
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
