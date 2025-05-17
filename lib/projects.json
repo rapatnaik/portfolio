@@ -1,5 +1,12 @@
 [
 	{
+		"title": "CycleBoston: Interactive Geospatial Map",
+		"year": "2025",
+		"image": "https://media.wbur.org/wp/2023/12/IMG_0353-1000x750.jpg",
+		"url": "https://rapatnaik.github.io/CycleBoston/",
+		"description": "Developed an interactive geospatial visualization using Mapbox GL and D3.js to analyze BlueBike traffic across Boston and Cambridge. Preprocessed trip and station data to enable real-time filtering based on time of day, incorporating dynamic circle scaling and time-bucketed lookups for performance. Led interface and encoding design."
+	},
+	{
 		"title": "Shakespearean Small Language Model",
 		"year": "2025",
 		"image": "https://hips.hearstapps.com/hmg-prod/images/william-shakespeare-study-guide-66c34dd095ccc.jpg?crop=0.852xw:1.00xh;0.0749xw,0&resize=768:*",
@@ -64,11 +71,5 @@
 		"year": "2023",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
 		"description": "Quos, recusandae, sit rerum velit nostrum nihil quisquam tempora repellat sed quibusdam facilis. Assumenda quaerat ab, nesciunt odio facere sit, ipsa necessitatibus tempora, maiores commodi sed quae provident deserunt at?"
-	},
-	{
-		"title": "Iusto, incidunt. Totam, illum.",
-		"year": "2021",
-		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Tempore, eveniet minus velit, earum aperiam necessitatibus repellendus provident accusamus illum officiis doloribus, eum saepe est aut numquam distinctio pariatur natus totam repellat. Numquam nulla libero sapiente magnam nostrum ex."
 	}
 ]
