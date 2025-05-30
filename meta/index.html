@@ -13,30 +13,61 @@
   <div id="stats" class="summary-stats"></div>
 
   <h2>Commits by time of day</h2>
-  <br>
-  <div id="chart"></div>
+  <div style="display: flex; align-items: center; margin-top: 1rem;">
+    <label for="commit-progress" style="flex: 1; font-weight: 500;">
+      Show commits until:
+    </label>
+    <input
+      type="range"
+      id="commit-progress"
+      min="0"
+      max="100"
+      value="100"
+      style="flex: 4; margin: 0 1rem;"
+    />
+    <time id="commit-slider-time" style="white-space: nowrap;"></time>
+  </div>  
 
-  <dl id="commit-tooltip" class="info tooltip" hidden>
-    <dt>Commit</dt>
-    <dd>
-      <a href="" id="commit-link" target="_blank"></a>
-    </dd>
-  
-    <dt>Date</dt>
-    <dd id="commit-date"></dd>
-  
-    <dt>Time</dt>
-    <dd id="commit-time"></dd>
-  
-    <dt>Author</dt>
-    <dd id="commit-author"></dd>
-  
-    <dt>Lines Edited</dt>
-    <dd id="commit-lines"></dd>
+  <dl id="files">
+    <!-- we want the following structure for each file:
+    <div>
+      <dt>
+        <code>{file.name}</code>
+      </dt>
+      <dd>{file.lines.length} lines</dd>
+    </div>
+    -->
   </dl>
 
-  <p id="selection-count">No commits selected</p>
-  <dl id="language-breakdown" class="stats"></dl>
+  <br>
+  <div id="scrolly-1">
+    <div id="scatter-story">some filler text here</div>
+    <div id="scatter-plot">
+      <div id="chart"></div>
+
+      <dl id="commit-tooltip" class="info tooltip" hidden>
+        <dt>Commit</dt>
+        <dd>
+          <a href="" id="commit-link" target="_blank"></a>
+        </dd>
+      
+        <dt>Date</dt>
+        <dd id="commit-date"></dd>
+      
+        <dt>Time</dt>
+        <dd id="commit-tooltip-time"></dd>
+      
+        <dt>Author</dt>
+        <dd id="commit-author"></dd>
+      
+        <dt>Lines Edited</dt>
+        <dd id="commit-lines"></dd>
+      </dl>
+
+      <p id="selection-count">No commits selected</p>
+      <dl id="language-breakdown" class="stats"></dl>
+    </div>
+  </div>
   
 </body>
 </html>
