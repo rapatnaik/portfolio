@@ -487,8 +487,18 @@ d3.select('#scatter-story')
     `
   )
   
+// helper func to smooth
+function debounce(fn, delay) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
 
-  function onStepEnter(response) {
+
+function onStepEnter(response) {
+  const handleStepEnter = debounce((response) => {
     const datetime = response.element.__data__.datetime;
   
     commitMaxTime = datetime;
@@ -508,7 +518,10 @@ d3.select('#scatter-story')
     updateScatterPlot(data, filteredCommits);
     renderCommitInfo(filteredData, filteredCommits);
     updateFileDisplay(filteredCommits);
-  }
+  }, 50); // run at most every 50ms
+  
+  scroller.onStepEnter(handleStepEnter);
+}
   
 const scroller = scrollama();
 scroller

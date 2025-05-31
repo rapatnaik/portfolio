@@ -51,6 +51,7 @@ html {
   --color-accent: oklch(75% 20% 250);
   accent-color: var(--color-accent);
   color-scheme: light dark;
+  scroll-behavior: smooth;
 }
 
 input,
